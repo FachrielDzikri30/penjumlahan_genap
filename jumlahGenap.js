@@ -1,5 +1,5 @@
 //Fungsi 1
-const bilangan = (bil) => {
+const bilInt = (bil) => {
     let arrayBil = [];
     for (let i=0;i<=bil;i++){
         arrayBil.push(i);
@@ -20,19 +20,25 @@ const jumlahGenap = (arrayBil) => {
 
 //Panggil Fungsi
 const jumlah = (bil) => {
-    const array = bilangan(bil);
+    const array = bilInt(bil);
     return jumlahGenap(array);
 }
 
-let hasil = () => {
-    jumlah(bil);
+const hasil = () => {
+    const hasilJumlah = document.getElementById("hasilJumlah");
+    const bilangan = document.getElementById("bilangan");
+    const bil = parseInt(bilangan.value);
+    const sum = jumlah(bil);
+    const arr = bilInt(bil);
+    hasilJumlah.textContent = `Hasil Penjumlahan Bilangan Genap dari array ${arr} = ${sum}`
+    console.log(`Jumlah bilangan genap adalah ${sum} dari array ${arr}`)
 }
 
 //masukin array masih manual di ()
-console.log(jumlah(15));
+console.log("Pengecekan fungsi array")
+console.log(jumlah(4));
 console.log(jumlah(10));
 console.log(jumlah(3));
 console.log(jumlah());
 console.log(jumlah('x'));
 console.log(jumlah(undefined));
-
