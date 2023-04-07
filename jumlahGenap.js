@@ -26,8 +26,7 @@ const jumlah = (bil) => {
 
 const hasil = () => {
     const hasilJumlah = document.getElementById("hasilJumlah");
-    const bilangan = document.getElementById("bilangan");
-    const bil = parseInt(bilangan.value);
+    const bil = parseInt(document.getElementById("bilangan").value);
     const sum = jumlah(bil);
     const arr = bilInt(bil);
     hasilJumlah.textContent = `Hasil Penjumlahan Bilangan Genap dari array ${arr} = ${sum}`
